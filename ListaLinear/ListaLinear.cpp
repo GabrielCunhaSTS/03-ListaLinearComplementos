@@ -123,7 +123,26 @@ void inserirElemento()
 void excluirElemento()
 {
 
+	int NumeroDigitado;
 
+	cout << "Digite o elemento que deseja excluir: ";
+	cin >> NumeroDigitado;
+
+	int Encontrar = posicaoElemento(NumeroDigitado);
+
+
+	if (Encontrar == -1) {
+		cout << "O numero digitado nao existe na lista";
+		return;
+	}
+	else {
+		for (int i = Encontrar; i < nElementos - 1; i++) {
+			lista[i] = lista[i + 1];
+
+		}
+		nElementos--;
+		cout << "Numero " << NumeroDigitado << " excluido com sucesso!!!" << endl;
+	}
 }
 
 void buscarElemento()
